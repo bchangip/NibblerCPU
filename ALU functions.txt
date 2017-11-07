@@ -1,0 +1,17 @@
+Minimized:
+incPC = phase'  + i1 i0 + i3' i2 i1  + notZ' i3 i2' i0 + notC' i3' i2' i0 + notZ i3 i2' i1' i0' + notC i3' i2' i1' i0';
+notLoadP = phase'  + i1  + i3' i2  + i2 i0 + notZ' i3 i0 + notC' i3' i0 + notC i3' i0' + notZ i3 i2' i0';
+notLoadA = phase'  + i3' i2'  + i3 i1'  + i3' i1 i0;
+notLoadF = phase'  + i3 i1'  + i2' i1'  + i3' i2 i1 i0;
+notCarry = phase'  + i3  + i2  + i1' ;
+M = phase i3 i2 i1  + phase i3' i2 i1'  + phase i2 i1 i0';
+S3 = phase i3 i2' i1  + phase i3' i2 i1'  + phase i3' i2 i0';
+S2 = phase i3' i2' i1 ;
+S1 = phase i3' i2' i1  + phase i3' i2 i1'  + phase i3' i1 i0';
+S0 = phase i3 i1 ;
+notCsRam = phase'  + i1'  + i3 i0' + i2' i0';
+notWeRam = phase'  + i3  + i2'  + i1'  + i0';
+notOeALU = phase i3 i1  + phase i2' i1  + phase i3' i2 i1'  + phase i3' i2 i0';
+notOeIn = phase'  + i3  + i2'  + i1  + i0';
+NotOeOpr = phase'  + i0 + i3 i1'  + i2' i1'  + i3' i2 i1 ;
+NotLoadO = phase'  + i3'  + i2'  + i1  + i0';
