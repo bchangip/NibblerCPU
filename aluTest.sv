@@ -12,40 +12,29 @@ module testbench();
   wire [3:0] dataOut;
   wire carryOut;
 
-  ALU alu(dataIn, reset, clk, dataOut);
+  ALU alu(carryIn,mode,func,aPort,bPort,dataOut,carryOut);
 
   initial
     begin
       // Initial values
-      {dataIn, reset, clk} = 6'b0;
+      {aPort, bPort} = 8'b11000011;
 
       //Logging
-      $display("Time\tClock\tDataIn\tReset\tDataOut");
-      $monitor("%d\t %b\t%b\t%b\t%b", $time, clk, dataIn, reset, dataOut);
+      $display("carryIn\tmode\tfunc\taPort\tbPort\tdataOut\tcarryOut");
+      $monitor("%b\t%b\t%b\t%b\t%b\t%b\t%b", carryIn,mode,func,aPort,bPort,dataOut,carryOut);
 
-      #2 {dataIn, reset} = 5'b00010;
-      #2 {dataIn, reset} = 5'b00110;
-      #2 {dataIn, reset} = 5'b11000;
-      #2 {dataIn, reset} = 5'b01100;
-      #2 {dataIn, reset} = 5'b10010;
-      #2 {dataIn, reset} = 5'b00001;
-      #2 {dataIn, reset} = 5'b00000;
+      #1 $display("A Passthrough");
+      #1 {carryIn,mode,func} = 6'b100000;
+      #1 $display("B Passthrough");
+      #1 {carryIn,mode,func} = 6'b111010;
+      #1 $display("A - B (Arithmetic)");
+      #1 {carryIn,mode,func} = 6'b000110;
+      #1 $display("A + B (Arithmetic)");
+      #1 {carryIn,mode,func} = 6'b101001;
+      #1 $display("A NOR B");
+      #1 {carryIn,mode,func} = 6'b110001;
     end
 
-  /**********************************************************/
-  /*	CLOCK										                          		*/
-  /*                                          							*/
-  /**********************************************************/
-
-  // Clock
-  always
-    #1 clk = ~clk;
-
-  /**********************************************************/
-  /*	CLOCK 									                        			*/
-  /*                                           							*/
-  /**********************************************************/
- 
   //Finish simulation
   initial 
     #25 $finish;
