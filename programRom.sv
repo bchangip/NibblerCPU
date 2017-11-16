@@ -9,7 +9,7 @@ reg [7:0] data [0:4096];
 
 // Load data
 
-initial $readmemh("programRom.txt", data);
+initial $readmemb("programRom.txt", data);
 
 assign out = data[address];
 

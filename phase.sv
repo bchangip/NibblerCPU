@@ -1,14 +1,14 @@
 // Phase
 module Phase(
-  input reset,
+  input notReset,
   input clk,
   output phaseOut
 );
 
-reg phaseOut = 0;
+reg phaseOut;
 
-always @ ( posedge clk) begin
-	if(reset) begin
+always @ ( posedge clk or posedge ~notReset) begin
+	if(~notReset) begin
 		phaseOut = 0;
 	end else begin
 		phaseOut = ~phaseOut;

@@ -5,6 +5,6 @@ module QuadTristate(
   output [3:0] dataOut
 );
 
-assign dataOut = enable ? dataIn : 4'bz;
+assign dataOut = ~enable ? dataIn : 4'bz;
 
 endmodule
