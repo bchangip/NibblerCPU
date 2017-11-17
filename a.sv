@@ -14,7 +14,7 @@ always @ ( posedge clk) begin
 		{dataOut} = 4'b0;
 	end else begin
 		if(~notLoadA) begin
-			$display("Updating a");
+			// $display("Updating a");
 			{dataOut} = {dataIn};
 		end else begin
 			{dataOut} = {dataOut};

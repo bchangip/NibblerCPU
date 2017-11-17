@@ -44,8 +44,8 @@ Nibbler nibbler(
       {clk, notReset, pushbuttons} = 6'b000000;
 
       //Logging
-      $display("phase\tnotReset\tpushbuttons\tnotLoadA\tcz\tinstr\toperand\taPort\taluResult\tdataBus\taccu\tprogramByte\tpc\t\taddressRam");
-      $monitor("%b\t%b\t\t%b\t\t%b\t\t%b\t%b\t%b\t%b\t%b\t\t%b\t%b\t%b\t%d\t%b",phase,notReset,pushbuttons,notLoadA,flags,instr,operand,aPort,aluResult,dataBus,aPort,programByte,address,addressCon);
+      $display("phase\taddress\tprogramByte\tinstr\toperand\taddressCon\tdataBus\taPort\tflags\tpushbuttons");
+      $monitor("%b\t%d\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b",phase, address, programByte, instr, operand, addressCon, dataBus, aPort, flags, pushbuttons);
 
       // #2 {notReset} = 1'b0;
       #1 {notReset} = 1'b1;
@@ -67,5 +67,5 @@ Nibbler nibbler(
  
   //Finish simulation
   initial 
-    #35 $finish;
+    #500 $finish;
 endmodule
