@@ -1,4 +1,9 @@
-// Tristate
+/****************************************************************************************
+*																						*
+* https://www.bigmessowires.com/nibbler/												*
+* Implementation by: Bryan Chan and Diego Regalado										*
+*																						*
+*****************************************************************************************/
 module QuadTristate(
   input [3:0] dataIn,
   input enable,

@@ -1,4 +1,9 @@
-// Phase
+/****************************************************************************************
+*																						*
+* https://www.bigmessowires.com/nibbler/												*
+* Implementation by: Bryan Chan and Diego Regalado										*
+*																						*
+*****************************************************************************************/
 module Flags(
   input c,
   input z,

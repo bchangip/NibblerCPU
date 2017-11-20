@@ -1,4 +1,9 @@
-// Program Counter
+/****************************************************************************************
+*																						*
+* https://www.bigmessowires.com/nibbler/												*
+* Implementation by: Bryan Chan and Diego Regalado										*
+*																						*
+*****************************************************************************************/
 module ProgramCounter(
   input [11:0] addressIn,
   input incPC,

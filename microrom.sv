@@ -1,4 +1,9 @@
-// Microrom
+/****************************************************************************************
+*                                                                                       *
+* https://www.bigmessowires.com/nibbler/                                                *
+* Implementation by: Bryan Chan and Diego Regalado                                      *
+*                                                                                       *
+*****************************************************************************************/
 module Microrom(
   input [3:0] instruction,
   input nC,

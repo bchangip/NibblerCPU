@@ -1,7 +1,9 @@
-//-----------------------------------------------------
-// Bryan Chan
-// Project 2 - Nibble - Testbench
-//-----------------------------------------------------
+/****************************************************************************************
+*                                                                                       *
+* https://www.bigmessowires.com/nibbler/                                                *
+* Implementation by: Bryan Chan and Diego Regalado                                      *
+*                                                                                       *
+*****************************************************************************************/
 module testbench();
 
 reg clk;
@@ -47,7 +49,6 @@ Nibbler nibbler(
       $display("phase\taddress\tprogramByte\tinstr\toperand\taddressCon\tdataBus\taPort\tflags\tpushbuttons");
       $monitor("%b\t%d\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b",phase, address, programByte, instr, operand, addressCon, dataBus, aPort, flags, pushbuttons);
 
-      // #2 {notReset} = 1'b0;
       #1 {notReset} = 1'b1;
     end
 

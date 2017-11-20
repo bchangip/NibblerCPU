@@ -1,4 +1,9 @@
-// Program Rom
+/****************************************************************************************
+*																						*
+* https://www.bigmessowires.com/nibbler/												*
+* Implementation by: Bryan Chan and Diego Regalado										*
+*																						*
+*****************************************************************************************/
 module Rom(
   input [11:0] address,
   output [7:0] out
@@ -8,7 +13,6 @@ module Rom(
 reg [7:0] data [0:4096];
 
 // Load data
-
 initial $readmemb("programRom.txt", data);
 
 assign out = data[address];
