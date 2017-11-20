@@ -46,8 +46,8 @@ Nibbler nibbler(
       {clk, notReset, pushbuttons} = 6'b000000;
 
       //Logging
-      $display("phase\taddress\tprogramByte\tinstr\toperand\taddressCon\tdataBus\taPort\tflags\tpushbuttons");
-      $monitor("%b\t%d\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b",phase, address, programByte, instr, operand, addressCon, dataBus, aPort, flags, pushbuttons);
+      $display("phase\taddress\tprogramByte\tinstr\toperand\taddressCon\tdataBus\taPort\tflags\tpushbuttons\tout");
+      $monitor("%b\t%d\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t\t%b",phase, address, programByte, instr, operand, addressCon, dataBus, aPort, flags, pushbuttons, ffOut);
 
       #1 {notReset} = 1'b1;
     end

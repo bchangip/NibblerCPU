@@ -115,6 +115,18 @@ QuadTristate fetchOut(
 	.dataOut(dataBus)
 );
 
+QuadTristate pushbuttonsIn(
+	.dataIn(pushbuttons),
+	.enable(notOeIn),
+	.dataOut(dataBus)
+);
+
+QuadTristate out(
+	.dataIn(dataBus),
+	.enable(notLoadOut),
+	.dataOut(ffOut)
+);
+
 Ram ram(
 	.address(addressCon),
 	.notChipEnable(orNotChipSelect),
